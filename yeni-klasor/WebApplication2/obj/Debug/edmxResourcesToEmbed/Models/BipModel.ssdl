@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_AracKiralamaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Tbl_Araclar">
+    <Key>
+      <PropertyRef Name="AracId" />
+    </Key>
+    <Property Name="AracId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marka" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModelYili" Type="smallint" />
+    <Property Name="Yakit" Type="nvarchar" MaxLength="20" />
+    <Property Name="Vites" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fiyat" Type="money" />
+  </EntityType>
+  <EntityType Name="Tbl_Musteriler">
+    <Key>
+      <PropertyRef Name="TcKimlik" />
+    </Key>
+    <Property Name="TcKimlik" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="DogumTarihi" Type="date" />
+    <Property Name="Cinsiyet" Type="varchar" MaxLength="11" />
+    <Property Name="Telefon" Type="varchar" MaxLength="11" />
+    <Property Name="Sifre" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="Tbl_Rezervasyonlar">
+    <Key>
+      <PropertyRef Name="RezervasyonId" />
+    </Key>
+    <Property Name="RezervasyonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AracId" Type="int" />
+    <Property Name="TcKimlik" Type="varchar" MaxLength="11" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="AlmaTarihi" Type="date" />
+    <Property Name="TeslimTarihi" Type="date" />
+    <Property Name="Ucret" Type="money" />
+    <Property Name="IptalMi" Type="varchar" MaxLength="10" />
+    <Property Name="IptalTarihi" Type="date" />
+  </EntityType>
+  <EntityContainer Name="DB_AracKiralamaModelStoreContainer">
+    <EntitySet Name="Tbl_Araclar" EntityType="Self.Tbl_Araclar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Musteriler" EntityType="Self.Tbl_Musteriler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Rezervasyonlar" EntityType="Self.Tbl_Rezervasyonlar" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

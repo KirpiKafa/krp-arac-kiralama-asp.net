@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebApplication2.Models.Tbl_Araclar>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Css/stilim.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Araç Listesi</h3>
+
+    <p>
+        @Html.ActionLink("Yeni Araç Ekle", "Create")
+    </p>
+    <table class="table" border="1" cellpadding="0" cellspacing="3">
+        <tr>
+            <th>.</th>
+
+            <th>
+                Marka
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Model Yılı
+            </th>
+            <th>
+               Yakıt Türü
+            </th>
+            <th>
+                Vites Türü
+            </th>
+            <th>
+                Fiyat
+            </th>
+            <th>
+                İşlemler
+            </th>
+
+           
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+
+                @{ 
+                    var dir = "/VehicleImages/" + item.AracId + ".jpg";
+                    <img src="@Url.Content(dir)" width="100"/>
+                }
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Marka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelYili)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yakit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vites)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            
+            
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id=item.AracId }) |
+                @Html.ActionLink("Detaylar", "Details", new { id=item.AracId }) |
+                @Html.ActionLink("Sil", "Delete", new { id=item.AracId }) |
+                @Html.ActionLink("Resim Ekle", "SaveImages", new { id = item.AracId })
+
+
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

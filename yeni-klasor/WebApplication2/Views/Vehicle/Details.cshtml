@@ -1,0 +1,71 @@
+﻿@model WebApplication2.Models.Tbl_Araclar
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/Css/stilim.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h1>Kirpi Oto Kiralama</h1>
+        <h3>Araç Bilgileri</h3>
+        <hr />
+        <table border="1" cellpadding="5" cellspacing="0" width="500">
+
+            <tr>
+                <td colspan="2">
+                    @{
+                        var dir = "~/VehicleImages/" + Html.DisplayFor(model => model.AracId) + ".jpg";
+                        string FolderPath = Path.Combine(Server.MapPath(dir));
+                        if (System.IO.File.Exists(FolderPath))
+
+                        {
+                            <img src="@Url.Content(dir)" width="300" />
+                        }
+
+                    }
+
+                </td>
+            </tr>
+
+            <tr>
+                <td width="30%">MARKA</td>
+                <td>@Html.DisplayFor(model=>model.Marka)</td>
+             </tr>
+
+            <tr>
+                <td width="30%">MODEL</td>
+                <td>@Html.DisplayFor(model => model.Model)</td>
+            </tr>
+            <tr>
+                <td width="30%">MODEL YILI</td>
+                <td>@Html.DisplayFor(model => model.ModelYili)</td>
+            </tr>
+            <tr>
+                <td width="30%">YAKIT</td>
+                <td>@Html.DisplayFor(model => model.Yakit)</td>
+            </tr>
+            <tr>
+                <td width="30%">VİTES</td>
+                <td>@Html.DisplayFor(model => model.Vites)</td>
+            </tr>
+            <tr>
+                <td width="30%">FİYAT</td>
+                <td>@Html.DisplayFor(model => model.Fiyat) TL</td>
+            </tr>
+         </table>
+     
+    </div>
+    <p>
+        @Html.ActionLink("Rezervasyon", "Rezervation", new { id = Model.AracId }) |
+        @Html.ActionLink("Araç Listesi", "Index")
+    </p>
+</body>
+</html>

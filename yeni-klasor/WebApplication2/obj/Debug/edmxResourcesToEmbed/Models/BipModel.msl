@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_AracKiralamaModelStoreContainer" CdmEntityContainer="DB_AracKiralamaEntities">
+    <EntitySetMapping Name="Tbl_Araclar">
+      <EntityTypeMapping TypeName="DB_AracKiralamaModel.Tbl_Araclar">
+        <MappingFragment StoreEntitySet="Tbl_Araclar">
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Vites" ColumnName="Vites" />
+          <ScalarProperty Name="Yakit" ColumnName="Yakit" />
+          <ScalarProperty Name="ModelYili" ColumnName="ModelYili" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Marka" ColumnName="Marka" />
+          <ScalarProperty Name="AracId" ColumnName="AracId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Musteriler">
+      <EntityTypeMapping TypeName="DB_AracKiralamaModel.Tbl_Musteriler">
+        <MappingFragment StoreEntitySet="Tbl_Musteriler">
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+          <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="TcKimlik" ColumnName="TcKimlik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Rezervasyonlar">
+      <EntityTypeMapping TypeName="DB_AracKiralamaModel.Tbl_Rezervasyonlar">
+        <MappingFragment StoreEntitySet="Tbl_Rezervasyonlar">
+          <ScalarProperty Name="IptalTarihi" ColumnName="IptalTarihi" />
+          <ScalarProperty Name="IptalMi" ColumnName="IptalMi" />
+          <ScalarProperty Name="Ucret" ColumnName="Ucret" />
+          <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
+          <ScalarProperty Name="AlmaTarihi" ColumnName="AlmaTarihi" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="TcKimlik" ColumnName="TcKimlik" />
+          <ScalarProperty Name="AracId" ColumnName="AracId" />
+          <ScalarProperty Name="RezervasyonId" ColumnName="RezervasyonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

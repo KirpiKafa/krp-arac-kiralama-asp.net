@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b37e6bbc02024fb59f899102ddf5adef" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_AracKiralamaModel.Tbl_Araclar" Width="1.5" PointX="2.625" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_AracKiralamaModel.Tbl_Musteriler" Width="1.5" PointX="5" PointY="0.875" />
+        <EntityTypeShape EntityType="DB_AracKiralamaModel.Tbl_Rezervasyonlar" Width="1.5" PointX="7.5" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

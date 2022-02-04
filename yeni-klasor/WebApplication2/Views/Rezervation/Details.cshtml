@@ -1,0 +1,109 @@
+﻿@model WebApplication2.Models.Tbl_Araclar
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/Css/stilim.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function btn_pasif_yap()
+        {
+            var tarih = new Date();
+            var rezTarihi = new Date(rtarihi.innerText);
+            var rezIptal = new riptal.innerText;
+
+            if ((rezTarihi.getTime() < tarih.getTime()) || rezIptal == 'Evet')
+            {
+                iptal_linki.innerText = "İptal Edilemez.";
+            }
+           
+
+
+        }
+    </script>
+</head>
+<body onload="btn_pasif_yap()" >
+    <div>
+        <h1>Kirpi Oto Kiralama</h1>
+        <h3>Rezervasyon Detay Bilgileri(Hoşgeldiniz @Session["session_tc"].ToString())</h3>
+        <hr />
+
+        <table border="1" cellpadding="5" cellspacing="0" width="700">
+            <tr>
+                <th>Rezerv Id</th>
+                <th>Alma Tarihi</th>
+                <th>Teslim Tarihi</th>
+                <th>Ücret</th>
+                <th>İptal Mi</th>
+                <th>İptal Tarihi</th>
+            </tr>
+
+            <tr>
+                <td>@Url.RequestContext.RouteData.Values["id"]</td>
+                <td> <span id="rtarihi"> @ViewData["a_tarihi"]</span> </td>
+                <td>@ViewData["t_tarihi"]</td>
+                <td>@ViewData["ucret"] TL</td>
+                <td> <span id="riptal"> @ViewData["iptal_mi"]</span> </td>
+                <td>@ViewData["i_tarihi"]</td>
+                <td><span id="iptal_linki">@Html.ActionLink("İptal Et", "Iptal",new { id = Url.RequestContext.RouteData.Values["id"] },new{onclick = "return confirm('Bu rezervasyonu iptal edecekmisiniz ? ');" })</span></td>
+
+
+            </tr>
+        </table>
+        <hr />
+        <p>@ViewData["sonuc"]</p>
+        <h3>Araç Bilgileri</h3>
+        <table border="1" cellpadding="5" cellspacing="0" width="700">
+
+            <tr>
+                <td rowspan="6" width="%50">
+                    @{
+                        var dir = "~/VehicleImages/" + Html.DisplayFor(model => model.AracId) + ".jpg";
+                        string FolderPath = Path.Combine(Server.MapPath(dir));
+                        if (System.IO.File.Exists(FolderPath))
+
+                        {
+                            <img src="@Url.Content(dir)" width="300" />
+                        }
+
+                    }
+
+                </td>
+                
+                <td width="25%">MARKA</td>
+                <td>@Html.DisplayFor(model => model.Marka)</td>
+            </tr>
+
+            <tr>
+                <td >MODEL</td>
+                <td>@Html.DisplayFor(model => model.Model)</td>
+            </tr>
+            <tr>
+                <td >MODEL YILI</td>
+                <td>@Html.DisplayFor(model => model.ModelYili)</td>
+            </tr>
+            <tr>
+                <td >YAKIT</td>
+                <td>@Html.DisplayFor(model => model.Yakit)</td>
+            </tr>
+            <tr>
+                <td >VİTES</td>
+                <td>@Html.DisplayFor(model => model.Vites)</td>
+            </tr>
+            <tr>
+                <td >FİYAT</td>
+                <td>@Html.DisplayFor(model => model.Fiyat) TL</td>
+            </tr>
+        </table>
+
+    </div>
+    <p>
+        @Html.ActionLink("Rezervasyon Listesi", "Index")
+    </p>
+</body>
+</html>

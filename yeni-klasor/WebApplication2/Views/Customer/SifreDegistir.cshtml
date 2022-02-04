@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SifreDegistir</title>
+    <link href="~/Css/stilim.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Kirpi Oto Kiralama</h1>
+    <h4>Müşteri Şifre Değiştirme Sayfası(Hoşgeldiniz @Session["session_tc"].ToString())</h4>
+    <hr />
+
+    @using (Html.BeginForm())
+    {
+        <table border="1" cellpadding="5" cellspacing="0" width="500">
+
+            <tr>
+                <td width="%40">Mevcut Şifre</td>
+                <td><input type="text" name="msif" size="10" /></td>
+            </tr>
+
+            <tr>
+                <td width="%40">Yeni Şifre</td>
+                <td><input type="text" name="ysif1" size="10" /></td>
+            </tr>
+
+            <tr>
+                <td width="%40">Yeni Şifre(Tekrar)</td>
+                <td><input type="text" name="ysif2" size="10" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Değiştir" /></td>
+            </tr>
+
+        </table>
+
+    }
+
+    <p>
+        @ViewData["sonuc"]
+    </p>
+
+    <p>
+        @Html.ActionLink("Profil", "Profil")
+        @Html.ActionLink("Şifre Değiştir", "SifreDegistir")
+        @Html.ActionLink("Oturumu Kapat", "Giris")
+        @Html.ActionLink("Rezervasyonlarım", "Index", "Rezervation")
+        @Html.ActionLink("Araçlar", "Vehicle")
+    </p>
+</body>
+</html>

@@ -1,0 +1,1 @@
+﻿select convert(varchar(32), HashBytes('MD5', '123'), 2)

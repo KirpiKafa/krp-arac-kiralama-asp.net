@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Css/stilim.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h1>Kirpi Oto Kiralama</h1>
+        <h3>Amacımız</h3>
+        <p>
+            Sakarya ili içerisindeki ikinci el araçların satış ve kiralanması ile ilgili işlemlerin
+            online olarak yapılmasını sağlamaktır.
+        </p>
+        <hr />
+        @Html.ActionLink("Ana Sayfa", "Index") |
+        @Html.ActionLink("Hakkımızda", "About") |
+        @Html.ActionLink("Araçlar", "Index", "Vehicle") |
+        @Html.ActionLink("İletişim", "Contact") |
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hakkımızda</title>
+    <link href="~/Css/stilim.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h1>Kirpi Oto Kiralama</h1>
+        <h3>Hakkımızda</h3>
+        <p>
+            1972 yılında dedemiz Kaportacı Alaattin Altun tarafından oto
+            tamir dükkanıyla Sakaryalı hemşehrilerimizin hizmetine başladık.
+        </p>
+        <p>
+            Şimdi ise bizlere miras kalan bu güzel işleri daha ileri taşımak adına bu siteyi yayına aldık.
+        </p>
+       
+        @Html.ActionLink("Ana Sayfa", "Index") |
+        @Html.ActionLink("Hakkımızda", "About") |
+        @Html.ActionLink("Araçlar", "Index", "Vehicle") |
+        @Html.ActionLink("İletişim", "Contact") |
+        <hr />
+
+    </div>
+</body>
+</html>
